@@ -3,27 +3,28 @@
 
 //Scene 1
 int switchVal1;
-const int switchPin1 = 10;
+const int switchPin1 = 11;
 const int ledPin1 = 13;
 
 //Scene 2
 int switchVal2;
-const int switchPin2 = 11;
+const int switchPin2 = 10;
 const int ledPin2 = 4;
 
 //Scene 3
-Servo myservo; 
+Servo myservo;
+Servo myservo2; 
 const int switchPin3 = 8;
 const int switchPin4 = 9;
 
 //Scene 4
 int switchVal3;
-const int switchPin5 = 12;
+const int switchPin5 = 7;
 const int ledPin3 = 5;
 
 //Scene 5
-Servo myservo2;
-const int switchPin6 = 7;
+Servo myservo3;
+const int switchPin6 = 12;
 
 //Note for Future Reference: All inidividual parts should work code-wise
 
@@ -42,7 +43,8 @@ pinMode (switchPin2, INPUT);
 pinMode (ledPin2, OUTPUT);
 
 //Scene 3 
-myservo.attach(2);
+myservo.attach(3);
+myservo2.attach(4);
 pinMode(switchPin3, INPUT);
 pinMode(switchPin4, INPUT);
 
@@ -51,7 +53,7 @@ pinMode (switchPin5, INPUT);
 pinMode (ledPin3, OUTPUT);
 
 //Scene 5
-myservo2.attach(2);
+myservo3.attach(2);
 pinMode (switchPin6, INPUT);
 
 }
@@ -87,7 +89,11 @@ if (digitalRead(switchPin3)==HIGH)
       while (digitalRead(switchPin4)==LOW)
       {
         myservo.write(180);
+        myservo2.write(180);
+        myservo.write(90);
+        myservo2.write(90);
         myservo.write(0);
+        myservo2.write(0);
       }
     
     }
@@ -106,11 +112,12 @@ if (digitalRead(switchPin3)==HIGH)
 //Scene 5: Heart Swings Out When Phillip Stands on Switch
 if (digitalRead(switchPin6)==HIGH)
     {
-      myservo2.write(180);
+      myservo3.write(180);
     }
 
 {
   
 }
+  
 
 }
