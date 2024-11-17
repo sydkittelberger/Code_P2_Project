@@ -146,10 +146,6 @@ switchVal5State = digitalRead(switchPin4);
     {
       myservo3.write(180);
     }
-  else
-  {
-    myservo3.write(90);
-  }
 
 {
   
